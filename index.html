@@ -11,6 +11,19 @@
 </style>
 </head>
 <body>
+<form>
+  <input type="text">
+  <input type="password">
+  <input type="radio">
+  <input type="checkbox">
+  <input type="submit">
+  <input type="image">
+  <input type="reset">
+  <input type="button">
+  <input type="file">
+  <input type="hidden">
+  <textarea name="message"></textarea>
+</form>
 <div class="content">
   <p style="color: red;">Some content</p>
   <p>Some more content</p>
@@ -44,7 +57,12 @@
 </div>
 <script type="text/JavaScript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script type="text/JavaScript">
-  
+  $('p', '.content').addClass('selected');
+  $('form').on('submit', function(e) {
+    e.preventDefault();
+    var allInputs = $('input', this);
+    allInputs.addClass('selected');
+  });
 </script>
 </body>
 </html>
